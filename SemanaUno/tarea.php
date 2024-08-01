@@ -28,62 +28,6 @@ function Operacion($variable1,$variable2,$operacion)
    return $resultado;
 }
 
-
-?>
-<?php
-
-/*
-Instrucciones:
-
-
-2. Script Básico en PHP:
-
-  - Crea un archivo PHP llamado `tarea.php`.
-
-  - Dentro de este archivo, realiza las siguientes tareas:
-
-  d. Uso de Condicionales:
-
-  - Crea una estructura de control condicional que verifique el valor de una variable booleana y muestre un mensaje diferente según sea `true` o `false`.
-
-
-
- e. Creación de un Array:
-
-  - Define un arreglo con al menos cinco elementos.
-
-  - Muestra un elemento específico del arreglo utilizando su índice.
-
-
-
-3. Entrega:
-
-- Usted debe subir el proyecto a github o gitlab y adjuntar el enlace
-
-
-
-
-echo("<br>");
-$es_valido = false; // Puedes cambiar este valor a false para probar la otra condición
-
-if ($es_valido) {
-    echo "La condición es verdadera. ¡Acceso concedido!";
-} else {
-    echo "La condición es falsa. Acceso denegado.";
-}
-
-echo("<br>");
-    $colores = array("Rojo", "Azul", "Verde", "Amarillo", "Naranja");
-
-// Mostrar un elemento específico del arreglo utilizando su índice
-// Por ejemplo, mostrar el tercer elemento (índice 2)
-echo "El tercer color en el arreglo es: " . $colores[2]; // Imprimirá: Verde
-*/
-?>
-
-
- <?php
- 
  // Declaracion de variables
 $nombre="Jorge";
 $apellido="López";
@@ -207,7 +151,6 @@ $colores = array("Rojo", "Azul", "Verde", "Amarillo", "Naranja");
 <div class="container">
         <ul> 
           
-        
         <?php    
         
             foreach($colores as $color)
