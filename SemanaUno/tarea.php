@@ -169,6 +169,7 @@ $colores = array("Rojo", "Azul", "Verde", "Amarillo", "Naranja");
 
   <div class="col-sm-3" style="background-color:white;">
   <p><?php echo "El tercer color en el arreglo es: " . $colores[2]; ?> </p>
+  <p><?php $var1 = "Hello"; $$var1 = "World"; echo $Hello;?></p>
   </div>
   
   
