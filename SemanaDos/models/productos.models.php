@@ -1,37 +1,37 @@
 <?php
-//TODO: Clase de Clientes
+//TODO: Clase de Productos
 require_once('../config/conexion.php');
-class Clientes
+class Productos
 {
     //TODO: Implementar los metodos de la clase
 
-    public function todos() //select * from clientes
+    public function todos() //select * from productos
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoParaConectar();
-        $cadena = "SELECT * FROM `clientes`";
+        $cadena = "SELECT * FROM `productos`";
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;
     }
 
-    public function uno($idClientes) //select * from clientes where id = $id
+    public function uno($idProductos) //select * from productos where id = $id
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoParaConectar();
-        $cadena = "SELECT * FROM `clientes` WHERE `idClientes`=$idClientes";
+        $cadena = "SELECT * FROM `productos` WHERE `idClientes`=$idProductos";
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;
     }
 
     
-    public function insertar($Nombres, $Direccion, $Telefono, $Cedula, $Correo) //insert into clientes (nombre, direccion, telefono,cedula, correo) values ($nombre, $direccion, $telefono,$Cedula,Correo)
+    public function insertar($Codigo_Barras, $Nombre_Producto, $Graba_IVA) //INSERT INTO `productos` ( `Codigo_Barras`, `Nombre_Producto`, `Graba_IVA`) VALUES ('$Codigo_Barras','$Nombre_Producto','$Graba_IVA')
     {
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "INSERT INTO `clientes` ( `Nombres`, `Direccion`, `Telefono`, `Cedula`, `Correo`) VALUES ('$Nombres','$Direccion','$Telefono','$Cedula','$Correo')";
+            $cadena = "INSERT INTO `productos` ( `Codigo_Barras`, `Nombre_Producto`, `Graba_IVA`) VALUES ('$Codigo_Barras','$Nombre_Producto','$Graba_IVA')";
             if (mysqli_query($con, $cadena)) {
                 return $con->insert_id;
             } else {
@@ -43,14 +43,14 @@ class Clientes
             $con->close();
         }
     }
-    public function actualizar($idClientes, $Nombres, $Direccion, $Telefono, $Cedula, $Correo) //update clientes set nombre = $nombre, direccion = $direccion, telefono = $telefono where id = $id
+    public function actualizar($idProductos, $Codigo_Barras, $Nombre_Producto, $Graba_IVA) //update clientes set nombre = $nombre, direccion = $direccion, telefono = $telefono where id = $id
     {
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "UPDATE `clientes` SET `Nombres`='$Nombres',`Direccion`='$Direccion',`Telefono`='$Telefono',`Cedula`='$Cedula',`Correo`='$Correo' WHERE `idClientes` = $idClientes";
+            $cadena = "UPDATE `productos` SET `Codigo_Barras`='$Codigo_Barras',`Nombre_Producto`='$Nombre_Producto',`Graba_IVA`='$Graba_IVA' WHERE `idClientes` = $idProductos";
             if (mysqli_query($con, $cadena)) {
-                return $idClientes;
+                return $idProductos;
             } else {
                 return $con->error;
             }
@@ -60,12 +60,12 @@ class Clientes
             $con->close();
         }
     }
-    public function eliminar($idClientes) //delete from clientes where id = $id
+    public function eliminar($idProductos) //delete from clientes where id = $id
     {
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "DELETE FROM `clientes` WHERE `idClientes`= $idClientes";
+            $cadena = "DELETE FROM `productos` WHERE `idProductos`= $idProductos";
             // echo $cadena;
             if (mysqli_query($con, $cadena)) {
                 return 1;
