@@ -17,12 +17,15 @@ class Turistas
 
     public function uno($turista_id) //select * from destinos where id = $id
     {
+        
         $con = new ClaseConectar();
         $con = $con->ProcedimientoParaConectar();
-        $cadena = "SELECT * FROM `turistas` WHERE ` turista_id`=$turista_id";
+        $cadena = "SELECT * FROM turistas WHERE turista_id=".$turista_id;
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;
+    
+        
     }
 
     
@@ -31,7 +34,7 @@ class Turistas
         try {
             $con = new ClaseConectar();
             $con = $con->ProcedimientoParaConectar();
-            $cadena = "INSERT INTO `turistas` ( `nombre`, `apellido`, `email`, `costelefonoto`) VALUES ('$nombre','$apellido','$email','$telefono')";
+            $cadena = "INSERT INTO `turistas` ( `nombre`, `apellido`, `email`, `telefono`) VALUES ('$nombre','$apellido','$email','$telefono')";
             if (mysqli_query($con, $cadena)) {
                 return $con->insert_id;
             } else {

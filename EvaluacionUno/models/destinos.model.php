@@ -19,7 +19,7 @@ class Destinos
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoParaConectar();
-        $cadena = "SELECT * FROM `destinos` WHERE ` destino_id`=$destino_id";
+        $cadena = "SELECT * FROM destinos  WHERE destino_id=".$destino_id;
         $datos = mysqli_query($con, $cadena);
         $con->close();
         return $datos;
